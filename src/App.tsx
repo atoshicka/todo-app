@@ -24,17 +24,34 @@ const App = () => {
         clearCompleted,
     } = useTasks();
 
+    const handleClearAll = () => {
+        if (window.confirm('Удалить все задачи?')) {
+            tasks.forEach(task => deleteTask(task.id))
+        }
+    };
+
     return (
-        <div className='min-h-screen bg-stone-100 flex items-center justify-center p-6'>
-            <div className='max-full max-w-md bg-white rounded-3xl p-8 shadow-sm border border-stone-200'>
+        <div className="min-h-screen bg-stone-100 md:min-h-screen md:flex md:items-center md:justify-center md:p-6">
+            <div className='w-full md:max-w-md bg-white md:rounded-3xl md:shadow-sm md:border md:border-stone-200 p-6 md:p-8 min-h-screen md:min-h-0'>
+                    
+                    <div className='flex items-center justify-between mb-6'>
                     <h1 className='text-xl font-semibold text-stone-800'>
                         Todo
                     </h1>
+                    {totalCount > 0 && (
+                        <button
+                            onClick={handleClearAll}
+                            className='text-xs text-stone-400 hover:text-red-400 transition-colors'
+                        >
+                            Удалить все
+                        </button>
+                    )}
+                    </div>
 
-                    <ProgressBar
-                        completed={completedCount}
-                        total={totalCount}
-                    />
+                <ProgressBar
+                    completed={completedCount}
+                    total={totalCount}
+                />
                 
                 <AddTaskForm  onAdd={addTask}/>
 

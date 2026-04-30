@@ -75,9 +75,9 @@ const TaskCard = ({ task, onToggle, onDelete }: TaskCardProps) => {
 
         <button
             onClick={() => onDelete(task.id)}
-            className='opacity-0 group-hover:opacity-100 transition-opacity text-stone-300 hover:text-red-400 flex-shrink-0 mt-0.5'
+            className='opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity text-stone-300 hover:text-red-400 flex-shrink-0 mt-0.5'
         >
-            <Trash2 size={16}/>
+            <Trash2 size={15}/>
         </button>
        </motion.div>
     );

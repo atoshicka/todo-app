@@ -48,7 +48,7 @@ const AddTaskForm = ({ onAdd }: AddTaskFormProps) => {
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
                     onKeyDown={handleKeyDowm}
-                    placeholder="New task..."
+                    placeholder="Новая задача..."
                     className="flex-1 text-sm px-4 py-2.5 rounded-xl border border-stone-200 bg-stone-50 text-stone-800 placeholder:text-stone-400 outline-none focus:border-stone-400 transition-colors"
                 />
                 <button
